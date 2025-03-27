@@ -8,5 +8,13 @@
 <body>
     <%- include("../partials/header") %>
     <h2>Register</h2>
+    <form action="/user/register" method="post">
+        <input required type="text" name="name" placeholder="Your name...">
+        <input required type="password" name="password" placeholder="Your password...">
+        <input required type="password" name="passwordCheck" placeholder="Your password again...">
+        <input type="checkbox" name="aiCheck"> <p>Do you agree with your data being used for AI model training</p>
+
+        <input type="submit" value="Register!">
+    </form>
 </body>
 </html>
