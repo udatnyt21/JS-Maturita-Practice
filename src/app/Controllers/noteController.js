@@ -10,5 +10,9 @@ exports.delete = (req,res) => {
 }
 
 exports.setImportance = (req, res) => {
+
+}
+
+exports.addGet = (req,res) => {
     
 }
