@@ -8,6 +8,8 @@ if(!db.has("next_id"))
 exports.add = (owner, title, content, isImportant, date, time) => {
     const id = db.get("next_id");
 
+    console.log(isImportant);
+
     if(isImportant == "on")
         isImportant = true
     else
@@ -28,5 +30,5 @@ exports.getNotes = (id) => {
     for(let i in data)
         if(data[i].owner == id)
             userNotes.push(data[i])
-    return userNotes
+    return userNotes.reverse()
 }

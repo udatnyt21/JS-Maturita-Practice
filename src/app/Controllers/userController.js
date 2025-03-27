@@ -51,7 +51,6 @@ exports.logout = (req,res) => {
 
 exports.profile = (req,res) => {
     let notes = noteModel.getNotes(req.session.user.id);
-    console.log(notes);
 
     res.render("./user/profile.ejs", {
         user: req.session.user,
