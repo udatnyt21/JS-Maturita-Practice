@@ -14,7 +14,7 @@ exports.logout = (req,res) => {
 }
 
 exports.profile = (req,res) => {
-
+    res.render("./user/profile.ejs")
 }
 
 exports.registerGet = (req,res) => {
@@ -22,5 +22,5 @@ exports.registerGet = (req,res) => {
 }
 
 exports.loginGet = (req,res) => {
-
+    res.render("./user/login.ejs")
 }
