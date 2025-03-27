@@ -1,4 +1,5 @@
 userModel = require("../Models/userModel");
+noteModel = require("../Models/noteModel");
 
 
 exports.register = (req,res) => {
@@ -49,8 +50,12 @@ exports.logout = (req,res) => {
 }
 
 exports.profile = (req,res) => {
+    let notes = noteModel.getNotes(req.session.user.id);
+    console.log(notes);
+
     res.render("./user/profile.ejs", {
-        user: req.session.user
+        user: req.session.user,
+        notes: notes
     })
 }
 

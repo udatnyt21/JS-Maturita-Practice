@@ -11,5 +11,12 @@
    <form action="/user/logout" method="post">
         <input type="submit" value="Logout!">
    </form>
+   <a href="/Note/addGet">Create a note</a>
+
+    <% for(let index in notes){ %>
+        <p><%- notes[index].title %></p>
+        <p><%- notes[index].content %></p>
+        <br>
+    <% } %>
 </body>
 </html>

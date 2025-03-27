@@ -18,4 +18,15 @@ exports.add = (owner, title, content, isImportant, date, time) => {
     });
     db.set("next_id", id+1);
 }
+
+exports.getNotes = (id) => {
+    const data = db.JSON();
+    delete data["next_id"];
+    
+    let userNotes= [];
+
+    for(let i in data)
+        if(data[i].owner == id)
+            userNotes.push(data[i])
+    return userNotes
 }
