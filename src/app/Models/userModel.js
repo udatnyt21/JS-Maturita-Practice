@@ -9,9 +9,11 @@ exports.checkName = (username) => {
     const data = db.JSON()
     delete data["next_id"]
 
-    for(let user in data)
-        if(username == user.name)
+    for(let id in data){
+        if(username == data[id].username)
             return false
+    }
+        
     return true
 }
 
@@ -27,9 +29,18 @@ exports.addUser = (username, password) => {
     db.set("next_id", id+1)
 }
 
-exports.checkPassword = (id, password) => {
+exports.checkPassword = (id, passwordToCheck) => {
+    const passwordCorrect = db.get(id).hashedPassword
 
+    return bcrypt.compareSync(passwordToCheck, passwordCorrect)
 }
 
 exports.userFromName = (username) => {
+
+    const data = db.JSON();
+    delete data["next_id"];
+
+    for(let id in data)
+        if(username == data[id].username)
+            return data[id]
 }

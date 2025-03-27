@@ -8,5 +8,10 @@
 <body>
     <%- include("../partials/header") %>
     <h2>Login</h2>
+    <form action="/user/login" method="post">
+        <input type="text" name="name" placeholder="Your name...">
+        <input type="password" name="password" placeholder="Your password...">
+        <input type="submit" value="Login!">
+    </form>
 </body>
 </html>
